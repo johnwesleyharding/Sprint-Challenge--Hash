@@ -1,11 +1,28 @@
 def intersection(arrays):
+    
+    l = len(arrays)
+    ht = {}
+    result = []
+    
+    for i in range(l):
+        
+        array = arrays[i]
+        
+        for value in array:
+            
+            if value in ht:
+                
+                ht[value] += 1
+            
+            else:
+                
+                ht[value] = 1
+                
+            if i == l - 1 and ht[value] == l:
 
-    """
-    YOUR CODE HERE
-    """
-
+                result.append(value)
+    
     return result
-
 
 if __name__ == "__main__":
     arrays = []
